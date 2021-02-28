@@ -19,6 +19,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pickPhotoSegue" {
+            let photoVC = segue.destination as! PhotoViewController
+            let cell = sender as! PhotoCell
+            photoVC.image = cell.dogImageView.image
+        }
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -37,8 +45,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCell
     
         let imageName = photos[indexPath.item]
+        let image = UIImage(named: imageName)
         
-        cell.dogImageView.image = UIImage(named: imageName)
+        cell.dogImageView.image = image
     
         return cell
     }
