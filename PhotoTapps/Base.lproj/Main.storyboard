@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sZX-fy-JRx">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sZX-fy-JRx">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,7 +29,21 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aKy-Ze-HcD">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tpw-jm-ANy">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tpw-jm-ANy" secondAttribute="bottom" id="Al6-eQ-dFL"/>
+                                        <constraint firstItem="tpw-jm-ANy" firstAttribute="leading" secondItem="aKy-Ze-HcD" secondAttribute="leading" id="AvF-xC-3cM"/>
+                                        <constraint firstItem="tpw-jm-ANy" firstAttribute="top" secondItem="aKy-Ze-HcD" secondAttribute="top" id="MTb-Qo-Kgm"/>
+                                        <constraint firstAttribute="trailing" secondItem="tpw-jm-ANy" secondAttribute="trailing" id="bpK-0r-F1m"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="dogImageView" destination="tpw-jm-ANy" id="gcm-3C-d7u"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -41,7 +55,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cN-o3-LP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.34782608695662" y="100.44642857142857"/>
+            <point key="canvasLocation" x="903.07692307692309" y="100.23696682464454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WHf-Kx-LWh">
